@@ -17,10 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from about import views as about_views
 
 urlpatterns = [
-    path('about/', about_views.about_me, name='about'),
+    path("about/", include("about.urls"), name="about-urls"),
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
     path('', include("blog.urls"), name='blog-urls'),
