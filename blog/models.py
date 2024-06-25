@@ -4,6 +4,13 @@ from django.contrib.auth.models import User
 STATUS = ((0, "Draft"), (1, "Published"))
 
 # Create your models here.
+class Category(models.Model):
+    name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return  self.name
+
+
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -13,6 +20,7 @@ class Post(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True, null=True)
     updated_on = models.DateTimeField(auto_now=True)
+    category = models.ForeignKey(Category, on_delete=models.PROTECT, related_name="blog_posts", default=1)
     class Meta:
         ordering = ["-created_on"]
 
