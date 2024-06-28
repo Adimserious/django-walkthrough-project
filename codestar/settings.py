@@ -36,7 +36,6 @@ CSRF_TRUSTED_ORIGINS = ['https://8000-adimserious-djangowalkt-24ncpbs5wmc.ws.cod
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
-CLOUDINARY_URL = os.environ.get('cloudinary://272873885661232:CboUToVDuMm6kWG09QAv3j2yB6Q@diljenpjx')
 
 
 # Application definition
