@@ -28,13 +28,15 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = 'django-insecure-a45y_)n0b)gdjh(+eo_3b0ct5u2q735v@2cb^k9dm6(#wu1k-h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['8000-adimserious-djangowalkt-24ncpbs5wmc.ws.codeinstitute-ide.net', '.herokuapp.com']
 
 CSRF_TRUSTED_ORIGINS = ['https://8000-adimserious-djangowalkt-24ncpbs5wmc.ws.codeinstitute-ide.net', '.https://*.herokuapp.com']
 
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
+
+CLOUDINARY_URL = os.environ.get('cloudinary://272873885661232:CboUToVDuMm6kWG09QAv3j2yB6Q@diljenpjx')
 
 
 # Application definition
